@@ -7,13 +7,13 @@ const loanSchema = {
     type: Date,
     default: new Date(),
   },
-  mobileNumber: Number,
-  alternativeMobileNumber: Number,
+  mobileNumber: String,
+  alternativeMobileNumber: String,
   address: String,
-  amount: String,
+  amount: Number,
   notes: String,
 };
 
-const loanMessage = mongoose.model('loanMessage', loanSchema);
+const LoanDetails = mongoose.model('loanDetails', loanSchema);
 
-export default loanMessage;
+export default LoanDetails;
