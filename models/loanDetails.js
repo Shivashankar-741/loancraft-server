@@ -16,4 +16,4 @@ const loanSchema = {
 
 const LoanDetails = mongoose.model('loanDetails', loanSchema);
 
-export default LoanDetails
+export default LoanDetails;
