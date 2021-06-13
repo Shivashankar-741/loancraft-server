@@ -6,7 +6,7 @@ import loanRoutes from './routes/loans.js';
 import userRoutes from './routes/users.js';
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: './config.env' });
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
