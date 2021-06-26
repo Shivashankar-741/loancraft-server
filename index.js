@@ -2,8 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import loanRoutes from './routes/loans.js';
-import userRoutes from './routes/users.js';
+import loanRoutes from './routes/loanRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 dotenv.config({ path: './config.env' });
