@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const loanRouter = require('./routes/loanRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -11,6 +12,9 @@ const app = express();
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(cors());
+
 
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
