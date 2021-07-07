@@ -38,6 +38,7 @@ const loanSchema = mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  creator: String,
 });
 
 const Loan = mongoose.model('Loan', loanSchema);
