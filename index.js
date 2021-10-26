@@ -16,12 +16,11 @@ app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(cors());
 
-app.use('/loans', loanRoutes);
-app.use('/users', userRoutes);
-
 app.get('/', (req, res) => {
   res.send('LoanCraft API here');
 });
+app.use('/loans', loanRoutes);
+app.use('/users', userRoutes);
 
 const PORT = process.env.PORT || 4000;
 
