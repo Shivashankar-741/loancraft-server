@@ -38,9 +38,13 @@ exports.createLoan = async (req, res, next) => {
 exports.deleteLoan = async (req, res, next) => {
   try {
     const { id } = req.params;
-    await Loan.findByIdAndDelete(id);
-    req.params.id = id;
-    next();
+    const deletedLoan = await Loan.findByIdAndDelete(id);
+    res.status(200).json({
+      status: 'success',
+      data: {
+        deletedLoan,
+      },
+    });
   } catch (err) {
     res.status(400).json({
       status: 'fail',
@@ -48,3 +52,17 @@ exports.deleteLoan = async (req, res, next) => {
     });
   }
 };
+
+// exports.deleteLoan = async (req, res, next) => {
+//   try {
+//     const { id } = req.params;
+//     await Loan.findByIdAndDelete(id);
+//     req.params.id = id;
+//     next();
+//   } catch (err) {
+//     res.status(400).json({
+//       status: 'fail',
+//       message: err.message,
+//     });
+//   }
+// };

@@ -8,6 +8,7 @@ router
   .route('/')
   .get(loanController.getAllLoans)
   .post(loanController.createLoan, overviewController.updateOverview);
-router.route('/:id').delete(loanController.deleteLoan, overviewController.deleteOverview);
+router.route('/:id').delete(loanController.deleteLoan);
+// router.route('/:id').delete(loanController.deleteLoan, overviewController.deleteOverview);
 
 module.exports = router;
