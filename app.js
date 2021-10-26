@@ -15,9 +15,13 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cors());
 
-
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
+
+// routes
+app.get('/', (req, res) => {
+  res.send('loancraft application main route url');
+});
 
 app.use('/api/v1/loans', loanRouter);
 app.use('/api/v1/users', userRouter);
