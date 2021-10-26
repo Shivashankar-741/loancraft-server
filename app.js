@@ -7,17 +7,16 @@ const userRouter = require('./routes/userRoutes');
 const overviewRouter = require('./routes/overviewRoutes');
 
 const app = express();
+app.use(cors());
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(cors());
-
 // Body parser, reading data from body into req.body
-app.use(express.json({ limit: '10kb' }));
-
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 // routes
 app.get('/', (req, res) => {
   res.send('loancraft application main route url');
