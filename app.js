@@ -17,6 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
 // routes
 app.get('/', (req, res) => {
   res.send('loancraft application main route url');
